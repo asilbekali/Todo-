@@ -5,12 +5,12 @@ import TodoList from "./modules/TodoList";
 
 function App() {
 
-  const [todo, setTodo] = useState([])
+  const [todos, setTodo] = useState([])
 
   return (
     <>
-      <TodoForum setTodo={setTodo} todo={todo} />
-      <TodoList />
+      <TodoForum setTodo={setTodo} todos={todos} />
+      <TodoList todos={todos} />
     </>
   );
 }

@@ -1,12 +1,18 @@
 import React, { useRef } from 'react'
 
-const TodoForum = ({ setTodo, todo }) => {
+const TodoForum = ({ setTodo, todos }) => {
 
   const inputRef = useRef()
 
   function handleAddTodo(e) {
     e.preventDefault()
-    alert(inputRef.current.value)
+    const todo = {
+      id: todos[todos.length - 1]?.id ? todos[todos.length - 1]?.id + 1 : 1,
+      value: e.target.todoValue.value,
+      isCOmpleted: false
+    }
+    setTodo([...todos, todo])
+    e.target.reset()
   }
 
   return (
