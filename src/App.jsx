@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <TodoForum setTodo={setTodo} todos={todos} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} setTodos={setTodo}/>
     </>
   );
 }
